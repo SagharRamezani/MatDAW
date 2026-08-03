@@ -1,0 +1,15 @@
+MatDAW Final Submission Checklist
+
+1. Run main.m from the project root.
+2. Confirm that final_validation reports zero failed checks.
+3. Listen to all required WAV files.
+4. Open every PNG figure and verify titles, labels, and readability.
+5. Complete the report template and replace all bracketed placeholders.
+6. Insert the final project figures in the matching report sections.
+7. Add the actual low-pass coefficients b and a from phase4_results.mat.
+8. Export the report to PDF after final proofreading.
+9. Keep the original MATLAB files and generated outputs in the submission folder.
+10. Rename the final archive exactly as required: SS_PRJ_StudentNo.rar
+
+Privacy reminder:
+Do not publish the personal voice recording or student number in a public repository.

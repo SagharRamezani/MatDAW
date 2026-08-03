@@ -26,31 +26,31 @@ for i = 1:numel(requiredFolders)
     end
 end
 
-fprintf('MatDAW started.\n');
+fprintf('MatDAW integrated execution started.\n');
 fprintf('Project root: %s\n\n', projectRoot);
 
-runPhase1 = false;
-runPhase2 = false;
-runPhase3 = false;
-runPhase4 = true;
-
-if runPhase1
-    phase1_synthesizer(cfg);
+% The original voice recording must already exist. This integrated run does
+% not activate the microphone.
+requiredRecording = fullfile(cfg.paths.phase2Audio, 'x_original.wav');
+if ~exist(requiredRecording, 'file')
+    error(['Required recording not found: ' requiredRecording newline ...
+        'Run phase2_record_audio(config()) once before integrated execution.']);
 end
 
-if runPhase2
-    if cfg.phase2.recordNewAudio
-        phase2_record_audio(cfg);
-    end
-    phase2_resample_analysis(cfg);
-end
+phase1_synthesizer(cfg);
+close all;
 
-if runPhase3
-    phase3_echo_processing(cfg);
-end
+phase2_resample_analysis(cfg);
+close all;
 
-if runPhase4
-    phase4_equalizer(cfg);
-end
+phase3_echo_processing(cfg);
+close all;
 
-fprintf('\nSelected project phases finished.\n');
+phase4_equalizer(cfg);
+close all;
+
+validation = final_validation(cfg);
+
+fprintf('\nIntegrated execution finished successfully.\n');
+fprintf('Validation passed: %d/%d checks.\n', ...
+    validation.PassedChecks, validation.TotalChecks);
