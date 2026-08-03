@@ -11,6 +11,8 @@ cfg = config();
 requiredFolders = {
     cfg.paths.phase1Audio
     cfg.paths.phase1Figures
+    cfg.paths.phase2Audio
+    cfg.paths.phase2Figures
     cfg.paths.results
 };
 
@@ -23,8 +25,8 @@ end
 fprintf('MatDAW started.\n');
 fprintf('Project root: %s\n\n', projectRoot);
 
-runPhase1 = true;
-runPhase2 = false;
+runPhase1 = false;
+runPhase2 = true;
 runPhase3 = false;
 runPhase4 = false;
 
@@ -33,7 +35,10 @@ if runPhase1
 end
 
 if runPhase2
-    warning('Phase 2 has not been implemented yet.');
+    if cfg.phase2.recordNewAudio
+        phase2_record_audio(cfg);
+    end
+    phase2_resample_analysis(cfg);
 end
 
 if runPhase3
