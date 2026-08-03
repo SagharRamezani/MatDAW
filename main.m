@@ -13,6 +13,8 @@ requiredFolders = {
     cfg.paths.phase1Figures
     cfg.paths.phase2Audio
     cfg.paths.phase2Figures
+    cfg.paths.phase3Audio
+    cfg.paths.phase3Figures
     cfg.paths.results
 };
 
@@ -26,8 +28,8 @@ fprintf('MatDAW started.\n');
 fprintf('Project root: %s\n\n', projectRoot);
 
 runPhase1 = false;
-runPhase2 = true;
-runPhase3 = false;
+runPhase2 = false;
+runPhase3 = true;
 runPhase4 = false;
 
 if runPhase1
@@ -42,7 +44,7 @@ if runPhase2
 end
 
 if runPhase3
-    warning('Phase 3 has not been implemented yet.');
+    phase3_echo_processing(cfg);
 end
 
 if runPhase4
