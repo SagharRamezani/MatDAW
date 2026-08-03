@@ -1,0 +1,4 @@
+Filter,OverallOrder,MaximumPoleMagnitude,Stable
+LowPass,4,0.983779568646367,1
+BandPass,4,0.973361051311211,1
+HighPass,4,0.897632573195896,1

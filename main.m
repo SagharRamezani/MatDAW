@@ -15,6 +15,8 @@ requiredFolders = {
     cfg.paths.phase2Figures
     cfg.paths.phase3Audio
     cfg.paths.phase3Figures
+    cfg.paths.phase4Audio
+    cfg.paths.phase4Figures
     cfg.paths.results
 };
 
@@ -29,8 +31,8 @@ fprintf('Project root: %s\n\n', projectRoot);
 
 runPhase1 = false;
 runPhase2 = false;
-runPhase3 = true;
-runPhase4 = false;
+runPhase3 = false;
+runPhase4 = true;
 
 if runPhase1
     phase1_synthesizer(cfg);
@@ -48,7 +50,7 @@ if runPhase3
 end
 
 if runPhase4
-    warning('Phase 4 has not been implemented yet.');
+    phase4_equalizer(cfg);
 end
 
 fprintf('\nSelected project phases finished.\n');
