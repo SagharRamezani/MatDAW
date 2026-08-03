@@ -1,0 +1,54 @@
+# MATLAB temporary and backup files
+*.asv
+*.autosave
+*.m~
+*.mat~
+*.tmp
+
+# MATLAB generated files
+slprj/
+codegen/
+*.slxc
+*.mex*
+*.mlappinstall
+
+# Simulink cache
+*.slxc
+*.mdl.r20*
+*.slx.r20*
+
+# Large or temporary MATLAB data
+*.mat
+
+# Personal information
+student_information.txt
+personal_info.txt
+
+# Raw personal recordings
+audio/raw/
+audio/private/
+
+# Final compressed submissions
+*.rar
+*.zip
+*.7z
+
+# Report temporary files
+report/*.aux
+report/*.log
+report/*.out
+report/*.toc
+report/*.synctex.gz
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE settings
+.vscode/
+.idea/
+
+# Temporary files
+~$*
+*.bak
